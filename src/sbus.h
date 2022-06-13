@@ -71,7 +71,7 @@ class SbusRx {
   #if defined(ESP32)
   void Begin(const int8_t rxpin, const int8_t txpin, bool inverted);
   #else
-  void Begin();
+  void Begin(bool inverted);
   #endif
   bool Read();
   static constexpr int8_t NUM_CH() {return NUM_SBUS_CH_;}
@@ -108,7 +108,7 @@ class SbusTx {
   #if defined(ESP32)
   void Begin(const int8_t rxpin, const int8_t txpin, bool inverted);
   #else
-  void Begin();
+  void Begin(bool inverted);
   #endif
   void Write();
   static constexpr int8_t NUM_CH() {return NUM_SBUS_CH_;}
